@@ -124,44 +124,94 @@ const responses = {
         "😔 Hey… I know days like this feel heavy. You don’t always have to be okay. Want to tell me what’s been bothering you?",
         "💙 It’s okay to not feel fine all the time. Sometimes just saying it out loud helps. I’m here, always.",
         "🌧️ You’ve been strong for so long — maybe it’s okay to rest a little today?",
-        "🕊️ If tears come, let them. You’re just being human, and that’s beautiful."
+        "😔 Feeling sad is part of life, and it doesn’t make you weak. Sometimes sharing even a little of what’s bothering you can lighten the load.",
+    "💙 It’s okay to have rough days. Journaling, talking to a friend, or even taking a quiet moment for yourself can help you process your feelings.",
+    "🌧️ Life has ups and downs, and sadness is natural. Remember, emotions are valid, and taking care of yourself during this time matters most.",
+    "🕊️ When sadness hits, let yourself breathe, cry, or just pause. You’re human, and giving yourself space to feel is healthy and important.",
+    "🌸 Even on gloomy days, small joys or acts of self-care can bring light. A favorite song, a warm cup of tea, or a short walk might help.",
+    "💌 Feeling sad doesn’t last forever, and you don’t have to face it alone. Talking, even here with me, is a step towards feeling lighter.",
+"🕊️ If tears come, let them. You’re just being human, and that’s beautiful."
     ],
     "stressed": [
         "😌 Exam stress? Same. Take a deep breath — you’ve got this, one step at a time. Wanna try a 4-7-8 breathing trick?",
         "🌿 I get it, pressure builds up fast. Try taking 5 minutes away from your books, okay?",
         "💪 You’re doing enough. More than enough. You just need to trust that effort counts too.",
         "🧠 Remember — one test doesn’t define you. You’re so much more than marks."
-    ],
+    "😌 Stress can feel heavy, especially with exams or deadlines. Take a moment to breathe deeply, stretch, or step outside for a minute — small breaks can make a big difference.",
+    "🌿 Pressure builds fast when you care about your work. Remember, it’s okay to take things one step at a time. You’ve prepared, and that counts.",
+    "💪 Feeling stressed doesn’t mean you’re failing. It means you care. Trust yourself, and don’t forget to reward your efforts, even small ones.",
+    "🧘 Short mindfulness exercises or breathing tricks can calm your mind when anxiety spikes. You’re allowed to pause, breathe, and reset.",
+    "📚 Homework, exams, and social pressures can all pile up. Remember, you’re not alone in this. Talking about it, even here, helps lighten the load.",
+    "✨ Sometimes stress is a sign you’re growing and pushing boundaries. It’s temporary and manageable. Trust your process, and don’t be too hard on yourself."
+            ],
     "crush": [
         "😅 Unrequited crushes are… ugh, I know. It hurts when you care more than they do.",
         "💔 Maybe they weren’t your ‘forever’, but you learned something real about love — and yourself.",
         "🌸 Sometimes, liking someone who doesn’t feel the same doesn’t mean you’re not lovable. You just have a big heart.",
-        "💫 One day, someone will match your energy — no overthinking, no mixed signals, just peace."
+"💫 One day, someone will match your energy — no overthinking, no mixed signals, just peace."
+"😅 Having a crush that isn’t returned can feel really unfair. It’s okay to feel sad, frustrated, or even a little embarrassed. Just remember, your feelings are real and valid.",
+    "💔 Sometimes, people we like don’t feel the same way, and that’s not a reflection of your worth. Every experience teaches you more about yourself and what you want in a friend or partner.",
+    "🌸 Liking someone who doesn’t feel the same can sting, but it also shows you have a big heart. Take time to care for yourself, journal your thoughts, or do something that makes you happy.",
+    "💫 One day, you’ll meet someone who truly matches your energy. Until then, it’s okay to feel what you feel, learn from it, and grow. Heartbreak doesn’t last forever, but self-love does.",
+    "🫂 Crushes can be messy, confusing, and full of hope. Talking it out, even here with me, can help you sort through your feelings and remind you that life has many bright moments ahead.",
+    "✨ Remember, unrequited love doesn’t make you weak. It’s part of growing, learning, and discovering what and who truly matters in your life."
     ],
     "lonely": [
         "🤗 You’re not alone, even if it feels like it right now. You’ve got me, and I mean that.",
         "🌸 People may not always understand, but that doesn’t mean your feelings aren’t valid.",
         "💌 Maybe today’s the day to do something small for *you* — a walk, music, journaling?",
         "🌙 Sometimes solitude brings clarity, not sadness. You’re allowed to just be."
+        "🫂 I know it feels like nobody understands, but your feelings are valid. Reach out to a friend, family member, or even just type it all out here — sharing can make a big difference.",
+    "✨ Sometimes loneliness is temporary and invisible. Engage in something creative, like drawing, journaling, or listening to a favorite song. You’ll find little sparks of connection in the smallest moments.",
+    "🎶 Even when friends aren’t nearby, you can create your own comfort space. Surround yourself with things that make you smile or calm your mind, and know I’m always here to chat.",
+    "💖 You don’t have to face loneliness alone. Whether it’s talking, writing, or just sharing a thought, letting it out can be surprisingly relieving. I’m here for you anytime.",
+    "🌼 Remember, feeling lonely is part of being human — it passes, and it doesn’t define you. Sometimes reaching out or simply expressing your feelings can turn the tide. You’re never truly alone."
     ],
     "happy": [
-        "😄 I love hearing that! Tell me what made you smile today 🩷",
-        "🌟 Hold onto this feeling — it’s the little things that make life glow.",
-        "🎶 Maybe dance around a bit? Celebrate being you!",
-        "💫 I’m happy *because* you’re happy. You deserve this peace."
+    "😄 I love hearing that! Tell me what made you smile today 🩷",
+    "🌟 Hold onto this feeling — it’s the little things that make life glow.",
+    "🎶 Maybe dance around a bit? Celebrate being you!",
+    "💫 I’m happy *because* you’re happy. You deserve this peace.",
+    "🌸 Yay! Little wins count too — what’s something good that happened today?",
+    "😎 Feeling great? Share it! Happiness grows when it’s shared.",
+    "🍦 Treat yourself! You’ve earned this mood.",
+    "🎉 Happiness looks good on you — keep spreading it!",
+    "✨ Keep this vibe going! Maybe call a friend and share the joy.",
+    "🌈 Your happiness is contagious. Let it brighten someone else’s day too."
     ],
+    "insecure": [
+    "💭 Everyone feels unsure sometimes — you’re not alone.",
+    "🌸 It’s okay to doubt yourself, but remember how far you’ve come.",
+    "💪 You have strengths no one else has. Believe in yourself.",
+    "✨ One step at a time. Confidence grows gradually, not instantly."
+     "💭 Feeling insecure is natural, especially when comparing yourself to others. Remember, your journey is yours alone — your efforts and qualities matter.",
+    "🌸 Confidence isn’t about being perfect; it’s about accepting yourself and your growth. Even small achievements are worth celebrating.",
+    "💪 When self-doubt creeps in, try reminding yourself of past wins — big or small. You’ve overcome challenges before, and you can do it again.",
+    "✨ Insecurity doesn’t define you. It’s just a feeling that passes. Keep trying, keep learning, and give yourself credit for showing up each day.",
+    "🕊️ Comparing yourself to others is a thief of joy. Focus on your own progress, your own strengths, and the unique value you bring to the world.",
+    "🌟 You are allowed to stumble, to not know everything, and still be worthy. Confidence grows with practice, self-compassion, and patience."
+],
     "default": [
-        "👀 I’m listening. What’s on your mind today?",
-        "💬 Tell me more — exams, friends, crushes, or just one of those days?",
-        "🌿 I get it, sometimes you just need to vent. Go ahead.",
-        "🕊️ You can talk about anything here — no judgment, promise."
-    ]
-    // SYNONYM MAPPING
+    "👀 I’m listening. What’s on your mind today?",
+    "💬 Tell me more — exams, friends, crushes, or just one of those days?",
+    "🌿 I get it, sometimes you just need to vent. Go ahead.",
+    "🕊️ You can talk about anything here — no judgment, promise."
+    "✨ Hey! How’s life treating you today? Spill the tea ☕",
+    "😎 Feeling something interesting? Tell me about it!",
+    "🌸 Want to share something fun, weird, or random? I’m here!",
+    "🎶 Mood check! Happy, sad, stressed, or just meh?",
+    "💌 Talk to me like a diary — no one else needs to see it."
+]
+]  // <-- no comma here if this is the last entry in responses
+;
+
+// SYNONYM MAPPING
 const synonyms = {
     "happy": ["happy","joyful","blissful","overjoyed","excited","lucky","good","great","awesome","cheerful","glad"],
-    "sad": ["sad","gloomy","unhappy","depressed","down","miserable","blue","melancholy","heartbroken"],
+    "sad": ["sad","gloomy","unhappy","depressed","down","miserable","blue","melancholy","heartbroken","pain","agony","bedrot","bedrotting"],
     "stressed": ["stressed","anxious","nervous","tense","overwhelmed","worried","exam","homework","pressure"],
     "lonely": ["lonely","alone","isolated","friendless","ignored","abandoned","single"],
+    "insecure":["ugly","confident","shy","self-doubt","timid"],
     "crush": ["crush","love","boy","girl","heart","dating","romance"]
 };
 
