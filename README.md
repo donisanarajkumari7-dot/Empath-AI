@@ -100,6 +100,7 @@ button:hover { transform: scale(1.05); }
 const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");
 
+// Mood-based responses
 const responses = {
     "sad": [
         "😔 Hey… I know days like this feel heavy. You don’t always have to be okay. Want to tell me what’s been bothering you?",
@@ -144,9 +145,8 @@ const responses = {
         "🕊️ You can talk about anything here — no judgment, promise."
     ]
 };
-    // 🧠 FUN FACTS + MOTIVATIONAL QUOTES MODULE
 
-// ✅ Fun facts
+// Fun facts + motivational quotes
 const funFacts = [
   "🧠 The human brain can generate enough electricity to power a small light bulb!",
   "🐙 Octopuses have three hearts — and two of them stop when they swim!",
@@ -160,7 +160,6 @@ const funFacts = [
   "🌈 There are more stars in space than grains of sand on all Earth’s beaches."
 ];
 
-// ✅ Motivational quotes
 const motivationalQuotes = [
   "🌿 You don’t have to move fast — you just have to keep moving.",
   "☀️ You are the home you’ve been trying to find in others.",
@@ -174,42 +173,10 @@ const motivationalQuotes = [
   "💫 Your future self is already proud of you for not giving up today."
 ];
 
-// ✅ Keywords to trigger fun facts and motivational responses
 const funFactTriggers = ["fact", "interesting", "fun", "bored", "tell me something"];
 const motivationTriggers = ["motivate", "quote", "tired", "inspire", "help", "lazy", "demotivated", "sad", "lost"];
 
-// ✅ Function to check and respond accordingly
-function getSpecialResponse(userInput) {
-  const input = userInput.toLowerCase();
-
-  // If it matches a fun fact trigger
-  if (funFactTriggers.some(trigger => input.includes(trigger))) {
-    const fact = funFacts[Math.floor(Math.random() * funFacts.length)];
-    return fact;
-  }
-
-  // If it matches a motivation trigger
-  if (motivationTriggers.some(trigger => input.includes(trigger))) {
-    const quote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
-    return quote;
-  }
-
-  // If nothing matches, return null (bot continues with normal response)
-  return null;
-}
-
-// ✅ Example integration inside your message handler:
-function handleUserInput(userInput) {
-  const specialResponse = getSpecialResponse(userInput);
-  if (specialResponse) {
-    appendMessage("bot", specialResponse);
-    return;
-  }
-
-  // Otherwise, continue your normal chatbot logic...
-    }
-
-// SYNONYMS
+// Synonyms for moods
 const synonyms = {
     "happy": ["happy","joyful","blissful","overjoyed","excited","lucky","good","great","awesome","cheerful","glad"],
     "sad": ["sad","gloomy","unhappy","depressed","down","miserable","blue","melancholy","heartbroken","pain","agony"],
@@ -219,12 +186,33 @@ const synonyms = {
     "crush": ["crush","love","boy","girl","heart","dating","romance","like"]
 };
 
-// SEND MESSAGE
+// Get fun fact or motivational quote
+function getSpecialResponse(input) {
+    input = input.toLowerCase();
+    if (funFactTriggers.some(trigger => input.includes(trigger))) {
+        return funFacts[Math.floor(Math.random() * funFacts.length)];
+    }
+    if (motivationTriggers.some(trigger => input.includes(trigger))) {
+        return motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
+    }
+    return null;
+}
+
+// Append message
+function appendMessage(message, className) {
+    const msgDiv = document.createElement("div");
+    msgDiv.className = className;
+    msgDiv.innerText = message;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// Send message
 function sendMessage() {
-    const message = userInput.value.trim().toLowerCase();
+    const message = userInput.value.trim();
     if (!message) return;
 
-    appendMessage(userInput.value, "user-msg");
+    appendMessage(message, "user-msg");
     userInput.value = "";
 
     const typingDiv = document.createElement("div");
@@ -233,12 +221,22 @@ function sendMessage() {
     chatBox.appendChild(typingDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
 
+    // Check for fun facts or motivational quotes
+    const special = getSpecialResponse(message);
+    if (special) {
+        setTimeout(() => {
+            typingDiv.remove();
+            appendMessage(special, "bot-msg");
+        }, 1000);
+        return;
+    }
+
+    // Otherwise, mood-based response
     let reply = responses["default"][Math.floor(Math.random()*responses["default"].length)];
 
-    // Check for synonyms
     outer: for (let mood in synonyms) {
         for (let word of synonyms[mood]) {
-            if (message.includes(word)) {
+            if (message.toLowerCase().includes(word)) {
                 reply = responses[mood][Math.floor(Math.random()*responses[mood].length)];
                 break outer;
             }
@@ -251,16 +249,7 @@ function sendMessage() {
     }, 1000);
 }
 
-// APPEND MESSAGE
-function appendMessage(message, className) {
-    const msgDiv = document.createElement("div");
-    msgDiv.className = className;
-    msgDiv.innerText = message;
-    chatBox.appendChild(msgDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-// WELCOME MESSAGE
+// Welcome message
 window.onload = () => {
     appendMessage("👋 Hey there! I’m Empath AI — your little comfort corner for venting or just chatting. How's your day going?", "bot-msg");
 };
