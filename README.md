@@ -156,6 +156,50 @@ const responses = {
         "🌿 I get it, sometimes you just need to vent. Go ahead.",
         "🕊️ You can talk about anything here — no judgment, promise."
     ]
+    // SYNONYM MAPPING
+const synonyms = {
+    "happy": ["happy","joyful","blissful","overjoyed","excited","lucky","good","great","awesome","cheerful","glad"],
+    "sad": ["sad","gloomy","unhappy","depressed","down","miserable","blue","melancholy","heartbroken"],
+    "stressed": ["stressed","anxious","nervous","tense","overwhelmed","worried","exam","homework","pressure"],
+    "lonely": ["lonely","alone","isolated","friendless","ignored","abandoned","single"],
+    "crush": ["crush","love","boy","girl","heart","dating","romance"]
+};
+
+// EXTEND sendMessage function to include synonyms
+const originalSendMessage = sendMessage; // Save the old function
+
+sendMessage = function() {
+    const message = userInput.value.trim().toLowerCase();
+    if (!message) return;
+
+    appendMessage(userInput.value, "user-msg");
+    userInput.value = "";
+
+    const typingDiv = document.createElement("div");
+    typingDiv.className = "typing";
+    typingDiv.innerText = "Empath AI is typing...";
+    chatBox.appendChild(typingDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    let reply = responses["default"][Math.floor(Math.random()*responses["default"].length)];
+
+    // Check synonyms in the message
+    for (let mood in synonyms) {
+        for (let word of synonyms[mood]) {
+            if (message.includes(word)) {
+                if(responses[mood]) {
+                    reply = responses[mood][Math.floor(Math.random()*responses[mood].length)];
+                }
+                break;
+            }
+        }
+    }
+
+    setTimeout(() => {
+        typingDiv.remove();
+        appendMessage(reply, "bot-msg");
+    }, 1000);
+};
 };
 
 // Welcome message
