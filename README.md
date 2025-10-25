@@ -144,6 +144,70 @@ const responses = {
         "🕊️ You can talk about anything here — no judgment, promise."
     ]
 };
+    // 🧠 FUN FACTS + MOTIVATIONAL QUOTES MODULE
+
+// ✅ Fun facts
+const funFacts = [
+  "🧠 The human brain can generate enough electricity to power a small light bulb!",
+  "🐙 Octopuses have three hearts — and two of them stop when they swim!",
+  "🌱 Bamboo can grow up to 3 feet in just 24 hours!",
+  "🌕 A day on Venus is longer than a year on Venus. Mind-blowing, right?",
+  "💡 Your taste buds have a lifespan of about 10 to 14 days.",
+  "🎵 Music can literally change your heartbeat — your body syncs to the rhythm!",
+  "🐝 Bees can recognize human faces. They’re smarter than they look.",
+  "🔥 Hot water can freeze faster than cold water — it’s called the Mpemba effect!",
+  "💤 You can’t actually sneeze while sleeping — your brain turns that reflex off.",
+  "🌈 There are more stars in space than grains of sand on all Earth’s beaches."
+];
+
+// ✅ Motivational quotes
+const motivationalQuotes = [
+  "🌿 You don’t have to move fast — you just have to keep moving.",
+  "☀️ You are the home you’ve been trying to find in others.",
+  "🌻 Every sunrise is a reminder that you get to try again.",
+  "💭 Be patient with yourself — growth isn’t supposed to be loud.",
+  "🌙 The moon doesn’t care if it’s half or full; it still shines.",
+  "🔥 You’ve already survived everything you thought you couldn’t.",
+  "🌊 Small steps are still steps. Don’t underestimate their power.",
+  "✨ You are allowed to be both a masterpiece and a work in progress.",
+  "🌸 Flowers don’t bloom all year — neither do you, and that’s okay.",
+  "💫 Your future self is already proud of you for not giving up today."
+];
+
+// ✅ Keywords to trigger fun facts and motivational responses
+const funFactTriggers = ["fact", "interesting", "fun", "bored", "tell me something"];
+const motivationTriggers = ["motivate", "quote", "tired", "inspire", "help", "lazy", "demotivated", "sad", "lost"];
+
+// ✅ Function to check and respond accordingly
+function getSpecialResponse(userInput) {
+  const input = userInput.toLowerCase();
+
+  // If it matches a fun fact trigger
+  if (funFactTriggers.some(trigger => input.includes(trigger))) {
+    const fact = funFacts[Math.floor(Math.random() * funFacts.length)];
+    return fact;
+  }
+
+  // If it matches a motivation trigger
+  if (motivationTriggers.some(trigger => input.includes(trigger))) {
+    const quote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
+    return quote;
+  }
+
+  // If nothing matches, return null (bot continues with normal response)
+  return null;
+}
+
+// ✅ Example integration inside your message handler:
+function handleUserInput(userInput) {
+  const specialResponse = getSpecialResponse(userInput);
+  if (specialResponse) {
+    appendMessage("bot", specialResponse);
+    return;
+  }
+
+  // Otherwise, continue your normal chatbot logic...
+    }
 
 // SYNONYMS
 const synonyms = {
